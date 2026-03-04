@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Contact } from "@/components/Contact";
 import { ExperienceTimeline } from "@/components/ExperienceTimeline";
 import { Footer } from "@/components/Footer";
@@ -7,6 +8,11 @@ import { ProjectCard } from "@/components/ProjectCard";
 import { Section } from "@/components/Section";
 import { SkillsGrid } from "@/components/SkillsGrid";
 import { siteContent } from "@/content/siteContent";
+
+export const metadata: Metadata = {
+  title: siteContent.seo.title,
+  description: siteContent.seo.description
+};
 
 export default function Home() {
   return (
