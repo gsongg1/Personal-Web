@@ -71,7 +71,7 @@ export function Navbar({ name, navItems, resumePath, resumeLabel, social }: Navb
       return;
     }
 
-    const y = section.getBoundingClientRect().top + window.scrollY - 96;
+    const y = section.getBoundingClientRect().top + window.scrollY - 76;
     window.scrollTo({ top: y, behavior: "smooth" });
     history.replaceState(null, "", `#${id}`);
     setActiveSection(id);
@@ -79,13 +79,13 @@ export function Navbar({ name, navItems, resumePath, resumeLabel, social }: Navb
   };
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-surface/85 backdrop-blur-lg">
-      <div className="content-container flex h-20 items-center justify-between gap-4">
+    <header className="nav-header">
+      <div className="content-container nav-frame flex h-14 items-center justify-between gap-3">
         <Link href="/" className="brand-mark" aria-label="Go to top">
           {name}
         </Link>
 
-        <nav aria-label="Primary" className="hidden items-center gap-8 md:flex">
+        <nav aria-label="Primary" className="hidden items-center gap-5 md:flex">
           {navItems.map((item) => (
             <button
               key={item.id}
@@ -98,13 +98,8 @@ export function Navbar({ name, navItems, resumePath, resumeLabel, social }: Navb
           ))}
         </nav>
 
-        <div className="hidden items-center gap-2 md:flex">
-          <a
-            href={resumePath}
-            target="_blank"
-            rel="noreferrer"
-            className="btn btn-outline"
-          >
+        <div className="hidden items-center gap-1.5 md:flex">
+          <a href={resumePath} target="_blank" rel="noreferrer" className="btn btn-outline">
             {resumeLabel}
           </a>
           {externalLinks.map((link) => (
@@ -144,7 +139,7 @@ export function Navbar({ name, navItems, resumePath, resumeLabel, social }: Navb
               {item.label}
             </button>
           ))}
-          <div className="mt-4 flex items-center gap-2">
+          <div className="mt-2 flex items-center gap-2">
             <a
               href={resumePath}
               target="_blank"
@@ -209,3 +204,4 @@ function CloseIcon({ className }: IconProps) {
     </svg>
   );
 }
+

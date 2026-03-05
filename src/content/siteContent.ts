@@ -1,5 +1,5 @@
 export type NavItem = {
-  id: "about" | "projects" | "experience" | "skills" | "contact";
+  id: "about" | "projects" | "experience" | "contact";
   label: string;
 };
 
@@ -15,6 +15,7 @@ export type Project = {
   github: string;
   demo?: string;
   image?: string;
+  favicon?: string;
 };
 
 export type ExperienceItem = {
@@ -48,7 +49,7 @@ export const siteContent = {
       "Cloud: GCP (Cloud Run, Pub/Sub, Storage), Firebase",
       "Data: Python pipelines, PostgreSQL analytics"
     ],
-    statusLine: "Vancouver, BC · Open to internships / new grad roles"
+    statusLine: "Vancouver, BC - Open to internships / new grad roles"
   },
   seo: {
     title: "George Song | UBC Computer Science Portfolio",
@@ -76,9 +77,6 @@ export const siteContent = {
       title: "Experience",
       subtitle: "Roles focused on systems reliability, analytics, and operations."
     },
-    skills: {
-      title: "Skills"
-    },
     contact: {
       title: "Contact"
     }
@@ -87,7 +85,6 @@ export const siteContent = {
     { id: "about", label: "About" },
     { id: "projects", label: "Projects" },
     { id: "experience", label: "Experience" },
-    { id: "skills", label: "Skills" },
     { id: "contact", label: "Contact" }
   ] satisfies NavItem[],
   social: {
@@ -96,14 +93,27 @@ export const siteContent = {
   } satisfies SocialLinks,
   resumePath: "/resume.pdf",
   about: {
-    paragraph:
-      "I am a Computer Science student at UBC (expected Nov 2026) with a prior Biology degree (May 2022). I enjoy building user-facing applications and the infrastructure behind them, combining product thinking and design work from projects like Event Planner with practical systems engineering experience.",
-    quickFacts: [
-      "Vancouver, BC",
-      "Interests: product design, HCI, scalable infrastructure, video systems"
+    paragraphs: [
+      "I am currently a Computer Science student at the University of British Columbia. I enjoy solving problems in order to build innovative and impactful products. With my background in Biology, I aim to leverage my unique experience into the tech space and contribute in meaningful and innovative ways.",
+      "In my free time, I enjoy playing basketball, watching MMA, and video games!"
     ]
   },
   projects: [
+    {
+      title: "Event Planner",
+      description:
+        "Campus event discovery concept: product vision + roadmap informed by 14+ interviews, translated into interactive Figma prototypes and a stakeholder pitch.",
+      tags: [
+        "Figma",
+        "User Research",
+        "Prototyping",
+        "Roadmapping",
+        "Usability Testing"
+      ],
+      github: "",
+      demo: "https://www.figma.com/design/uHkBDOnqUasEJOutT1XugG/Event-Finder?node-id=0-1&t=cBEcgLABg8KcWuTu-1",
+      favicon: "/project-icons/event-planner.svg"
+    },
     {
       title: "HighlightVids",
       description:
@@ -119,27 +129,8 @@ export const siteContent = {
         "ffmpeg",
         "Docker"
       ],
-      github: ""
-    },
-    {
-      title: "Event Planner",
-      description:
-        "Campus event discovery concept: product vision + roadmap informed by 14+ interviews, translated into interactive Figma prototypes and a stakeholder pitch.",
-      tags: [
-        "Figma",
-        "User Research",
-        "Prototyping",
-        "Roadmapping",
-        "Usability Testing"
-      ],
-      github: ""
-    },
-    {
-      title: "Meal Planner",
-      description:
-        "Recipe discovery + saving + reviews + categories, and auto-generated grocery lists.",
-      tags: ["React", "TypeScript", "Node.js", "MySQL"],
-      github: ""
+      github: "https://github.com/gsongg1/VideoPlayer",
+      favicon: "/project-icons/highlightvids.svg"
     }
   ] satisfies Project[],
   experience: [
@@ -147,7 +138,7 @@ export const siteContent = {
       role: "Data Engineer Intern",
       company: "Policy Reporter by Mercalis",
       location: "Remote",
-      dates: "Sept 2024 – Aug 2025",
+      dates: "Sept 2024 - Aug 2025",
       bullets: [
         "Built Python ingestion and validation pipelines that increased throughput by 50%.",
         "Developed PostgreSQL functions powering analytics for 5,000+ daily records and reduced query latency by 35%.",
@@ -158,7 +149,7 @@ export const siteContent = {
       role: "IT & Operations Assistant",
       company: "Psychological Services and Counseling Training Center (UBC)",
       location: "Vancouver, BC",
-      dates: "Aug 2022 – Sept 2023",
+      dates: "Aug 2022 - Sept 2023",
       bullets: [
         "Provided endpoint support that reduced downtime by roughly 30% across staff systems.",
         "Installed and maintained security systems while coordinating outside vendors and internal requirements.",
@@ -202,3 +193,4 @@ export const siteContent = {
     }
   ] satisfies SkillsGroup[]
 };
+

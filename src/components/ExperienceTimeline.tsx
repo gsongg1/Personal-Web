@@ -18,7 +18,7 @@ export function ExperienceTimeline({ items, education }: ExperienceTimelineProps
                 <p>{item.company}</p>
               </div>
               <p className="timeline-meta">
-                {item.dates} · {item.location}
+                {item.dates} - {item.location}
               </p>
               <ul>
                 {item.bullets.map((bullet) => (
@@ -45,3 +45,4 @@ export function ExperienceTimeline({ items, education }: ExperienceTimelineProps
     </div>
   );
 }
+

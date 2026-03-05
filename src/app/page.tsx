@@ -6,7 +6,6 @@ import { Hero } from "@/components/Hero";
 import { Navbar } from "@/components/Navbar";
 import { ProjectCard } from "@/components/ProjectCard";
 import { Section } from "@/components/Section";
-import { SkillsGrid } from "@/components/SkillsGrid";
 import { siteContent } from "@/content/siteContent";
 
 export const metadata: Metadata = {
@@ -30,22 +29,13 @@ export default function Home() {
             name={siteContent.personal.name}
             eyebrow={siteContent.labels.heroEyebrow}
             tagline={siteContent.personal.tagline}
-            highlights={siteContent.personal.highlights}
-            statusLine={siteContent.personal.statusLine}
-            email={siteContent.personal.email}
-            primaryCtaLabel={siteContent.labels.viewProjects}
-            secondaryCtaLabel={siteContent.labels.emailMe}
-            social={siteContent.social}
           />
 
           <Section id="about" title={siteContent.sections.about.title}>
             <div className="about-block">
-              <p>{siteContent.about.paragraph}</p>
-              <ul>
-                {siteContent.about.quickFacts.map((fact) => (
-                  <li key={fact}>{fact}</li>
-                ))}
-              </ul>
+              {siteContent.about.paragraphs.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
             </div>
           </Section>
 
@@ -67,10 +57,6 @@ export default function Home() {
             subtitle={siteContent.sections.experience.subtitle}
           >
             <ExperienceTimeline items={siteContent.experience} education={siteContent.education} />
-          </Section>
-
-          <Section id="skills" title={siteContent.sections.skills.title}>
-            <SkillsGrid groups={siteContent.skills} />
           </Section>
 
           <Section id="contact" title={siteContent.sections.contact.title}>

@@ -13,7 +13,7 @@ export function Footer({ name, builtWithLabel, social }: FooterProps) {
     <footer className="site-footer">
       <div className="content-container footer-row">
         <p>
-          © {year} {name}
+          (c) {year} {name}
         </p>
         <p>{builtWithLabel}</p>
         <div className="footer-socials">
@@ -32,3 +32,4 @@ export function Footer({ name, builtWithLabel, social }: FooterProps) {
     </footer>
   );
 }
+

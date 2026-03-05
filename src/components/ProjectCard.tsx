@@ -9,7 +9,18 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
   return (
     <article className="project-card">
-      <h3 className="project-title">{project.title}</h3>
+      <div className="project-head">
+        {project.favicon ? (
+          <img
+            src={project.favicon}
+            alt={`${project.title} icon`}
+            className="project-favicon"
+            loading="lazy"
+          />
+        ) : null}
+        <h3 className="project-title">{project.title}</h3>
+      </div>
+
       <p className="project-description">{project.description}</p>
 
       <ul className="tag-list" aria-label={`${project.title} tech stack`}>

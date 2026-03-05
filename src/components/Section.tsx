@@ -48,7 +48,7 @@ export function Section({ id, title, subtitle, className = "", children }: Secti
       id={id}
       ref={sectionRef}
       data-visible={isVisible}
-      className={`section-block reveal scroll-mt-28 ${className}`}
+      className={`section-block reveal scroll-mt-24 ${className}`}
       aria-labelledby={`${id}-heading`}
     >
       <header className="section-header">
@@ -61,3 +61,4 @@ export function Section({ id, title, subtitle, className = "", children }: Secti
     </section>
   );
 }
+
