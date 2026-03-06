@@ -1,4 +1,5 @@
 import type { Project } from "@/content/siteContent";
+import { withBasePath } from "@/lib/paths";
 
 type ProjectCardProps = {
   project: Project;
@@ -6,17 +7,13 @@ type ProjectCardProps = {
 
 export function ProjectCard({ project }: ProjectCardProps) {
   const hasLinks = Boolean(project.github || project.demo);
+  const faviconSrc = project.favicon ? withBasePath(project.favicon) : null;
 
   return (
     <article className="project-card">
       <div className="project-head">
-        {project.favicon ? (
-          <img
-            src={project.favicon}
-            alt={`${project.title} icon`}
-            className="project-favicon"
-            loading="lazy"
-          />
+        {faviconSrc ? (
+          <img src={faviconSrc} alt={`${project.title} icon`} className="project-favicon" loading="lazy" />
         ) : null}
         <h3 className="project-title">{project.title}</h3>
       </div>

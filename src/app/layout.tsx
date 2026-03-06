@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "../styles/globals.css";
 import { siteContent } from "@/content/siteContent";
+import { withBasePath } from "@/lib/paths";
 
 export const metadata: Metadata = {
   title: siteContent.seo.title,
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
     description: siteContent.seo.description
   },
   icons: {
-    icon: "/icon.svg"
+    icon: withBasePath("/icon.svg")
   }
 };
 

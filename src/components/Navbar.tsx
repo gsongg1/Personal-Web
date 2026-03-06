@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import type { NavItem, SocialLinks } from "@/content/siteContent";
+import { withBasePath } from "@/lib/paths";
 
 type NavbarProps = {
   name: string;
@@ -15,6 +16,7 @@ type NavbarProps = {
 export function Navbar({ name, navItems, resumePath, resumeLabel, social }: NavbarProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState(navItems[0]?.id ?? "about");
+  const resumeHref = withBasePath(resumePath);
 
   const externalLinks = useMemo(
     () => [
@@ -99,7 +101,7 @@ export function Navbar({ name, navItems, resumePath, resumeLabel, social }: Navb
         </nav>
 
         <div className="hidden items-center gap-1.5 md:flex">
-          <a href={resumePath} target="_blank" rel="noreferrer" className="btn btn-outline">
+          <a href={resumeHref} target="_blank" rel="noreferrer" className="btn btn-outline">
             {resumeLabel}
           </a>
           {externalLinks.map((link) => (
@@ -141,7 +143,7 @@ export function Navbar({ name, navItems, resumePath, resumeLabel, social }: Navb
           ))}
           <div className="mt-2 flex items-center gap-2">
             <a
-              href={resumePath}
+              href={resumeHref}
               target="_blank"
               rel="noreferrer"
               className="btn btn-solid"
@@ -204,4 +206,3 @@ function CloseIcon({ className }: IconProps) {
     </svg>
   );
 }
-
