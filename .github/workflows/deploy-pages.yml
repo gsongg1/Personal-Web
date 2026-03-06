@@ -34,7 +34,9 @@ jobs:
 
       - name: Set BASE_PATH for GitHub Pages
         run: |
-          if [ "${{ github.event.repository.name }}" = "${{ github.repository_owner }}.github.io" ]; then
+          if [ -f "public/CNAME" ]; then
+            echo "BASE_PATH=" >> "$GITHUB_ENV"
+          elif [ "${{ github.event.repository.name }}" = "${{ github.repository_owner }}.github.io" ]; then
             echo "BASE_PATH=" >> "$GITHUB_ENV"
           else
             echo "BASE_PATH=/${{ github.event.repository.name }}" >> "$GITHUB_ENV"
@@ -66,3 +68,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
