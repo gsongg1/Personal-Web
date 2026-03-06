@@ -19,8 +19,8 @@ export default function Home() {
       <Navbar
         name={siteContent.personal.name}
         navItems={siteContent.navItems}
-        resumePath={siteContent.resumePath}
-        resumeLabel={siteContent.labels.resume}
+        email={siteContent.personal.email}
+        emailLabel={siteContent.labels.emailMe}
         social={siteContent.social}
       />
       <main>

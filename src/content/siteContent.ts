@@ -23,7 +23,7 @@ export type ExperienceItem = {
   company: string;
   location: string;
   dates: string;
-  bullets: string[];
+  favicon?: string;
 };
 
 export type EducationItem = {
@@ -60,7 +60,6 @@ export const siteContent = {
     heroEyebrow: "Portfolio",
     viewProjects: "View Projects",
     emailMe: "Email me",
-    resume: "Resume",
     builtWith: "Built with Next.js",
     contactIntro:
       "I am open to internships and new grad opportunities. Reach out and I can share more details about my work."
@@ -91,7 +90,6 @@ export const siteContent = {
     linkedin: "https://www.linkedin.com/in/george-song-54333461/",
     github: ""
   } satisfies SocialLinks,
-  resumePath: "/resume.pdf",
   about: {
     paragraphs: [
       "I am currently a Computer Science student at the University of British Columbia. I enjoy solving problems in order to build innovative and impactful products. With my background in Biology, I aim to leverage my unique experience into the tech space and contribute in meaningful and innovative ways.",
@@ -139,23 +137,14 @@ export const siteContent = {
       company: "Policy Reporter by Mercalis",
       location: "Remote",
       dates: "Sept 2024 - Aug 2025",
-      bullets: [
-        "Built Python ingestion and validation pipelines that increased throughput by 50%.",
-        "Developed PostgreSQL functions powering analytics for 5,000+ daily records and reduced query latency by 35%.",
-        "Designed and enforced data quality protocols that sustained 95% accuracy."
-      ]
+      favicon: "/company-icons/policy-reporter.png"
     },
     {
       role: "IT & Operations Assistant",
       company: "Psychological Services and Counseling Training Center (UBC)",
       location: "Vancouver, BC",
       dates: "Aug 2022 - Sept 2023",
-      bullets: [
-        "Provided endpoint support that reduced downtime by roughly 30% across staff systems.",
-        "Installed and maintained security systems while coordinating outside vendors and internal requirements.",
-        "Created an inventory tracking workflow for 2,000+ items with around 99% accuracy.",
-        "Served as a liaison translating operational pain points into concrete system improvements."
-      ]
+      favicon: "/company-icons/psctc.png"
     }
   ] satisfies ExperienceItem[],
   education: [

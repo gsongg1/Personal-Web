@@ -16,7 +16,6 @@ export function Contact({ intro, emailLabel, email, social }: ContactProps) {
           {emailLabel}
         </a>
       </div>
-      <p className="contact-email">{email}</p>
       <div className="contact-socials">
         {social.linkedin ? (
           <a href={social.linkedin} target="_blank" rel="noreferrer" className="text-link">

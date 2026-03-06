@@ -3,20 +3,19 @@
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import type { NavItem, SocialLinks } from "@/content/siteContent";
-import { withBasePath } from "@/lib/paths";
 
 type NavbarProps = {
   name: string;
   navItems: NavItem[];
-  resumePath: string;
-  resumeLabel: string;
+  email: string;
+  emailLabel: string;
   social: SocialLinks;
 };
 
-export function Navbar({ name, navItems, resumePath, resumeLabel, social }: NavbarProps) {
+export function Navbar({ name, navItems, email, emailLabel, social }: NavbarProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState(navItems[0]?.id ?? "about");
-  const resumeHref = withBasePath(resumePath);
+  const emailHref = `mailto:${email}`;
 
   const externalLinks = useMemo(
     () => [
@@ -101,8 +100,8 @@ export function Navbar({ name, navItems, resumePath, resumeLabel, social }: Navb
         </nav>
 
         <div className="hidden items-center gap-1.5 md:flex">
-          <a href={resumeHref} target="_blank" rel="noreferrer" className="btn btn-outline">
-            {resumeLabel}
+          <a href={emailHref} className="btn btn-outline">
+            {emailLabel}
           </a>
           {externalLinks.map((link) => (
             <a
@@ -142,14 +141,8 @@ export function Navbar({ name, navItems, resumePath, resumeLabel, social }: Navb
             </button>
           ))}
           <div className="mt-2 flex items-center gap-2">
-            <a
-              href={resumeHref}
-              target="_blank"
-              rel="noreferrer"
-              className="btn btn-solid"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {resumeLabel}
+            <a href={emailHref} className="btn btn-solid" onClick={() => setIsMenuOpen(false)}>
+              {emailLabel}
             </a>
             {externalLinks.map((link) => (
               <a

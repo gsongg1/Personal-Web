@@ -321,6 +321,9 @@ main {
 }
 
 .about-block {
+  display: inline-block;
+  width: fit-content;
+  max-width: min(100%, 78ch);
   border: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.03);
   border-radius: 0.9rem;
@@ -472,9 +475,22 @@ main {
   padding: 0.85rem;
 }
 
+.timeline-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+}
+
 .timeline-head h3 {
   font-size: 0.96rem;
   font-weight: 700;
+}
+
+.timeline-favicon {
+  width: 1.8rem;
+  height: 1.8rem;
+  flex-shrink: 0;
+  object-fit: contain;
 }
 
 .timeline-head p {
@@ -487,19 +503,6 @@ main {
   margin-top: 0.42rem;
   color: #93a1c2;
   font-size: 0.8rem;
-}
-
-.timeline-card ul {
-  margin-top: 0.6rem;
-  display: grid;
-  gap: 0.36rem;
-}
-
-.timeline-card li {
-  color: #d5def4;
-  line-height: 1.48;
-  font-size: 0.84rem;
-  margin-left: 0.92rem;
 }
 
 .education-card {
@@ -573,6 +576,9 @@ main {
 }
 
 .contact-card {
+  display: inline-block;
+  width: fit-content;
+  max-width: min(100%, 66ch);
   border: 1px solid var(--line);
   border-radius: 0.9rem;
   padding: clamp(0.9rem, 2.2vw, 1.15rem);
@@ -588,13 +594,6 @@ main {
 
 .contact-actions {
   margin-top: 0.72rem;
-}
-
-.contact-email {
-  margin-top: 0.86rem;
-  color: #f2f6ff;
-  font-weight: 650;
-  font-size: 0.9rem;
 }
 
 .contact-socials {
@@ -662,6 +661,4 @@ main {
     padding: 2rem 0;
   }
 }
-
-
 
