@@ -113,6 +113,22 @@ export const siteContent = {
       favicon: "/project-icons/event-planner.svg"
     },
     {
+      title: "Pulse Health Track",
+      description:
+        "Preventive health platform demo with private employee check-ins, explainable recommendations, and anonymized wellness dashboards for employer programs.",
+      tags: [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Prisma",
+        "Recharts",
+        "Zod",
+        "Privacy Design"
+      ],
+      github: "https://github.com/gsongg1/pulse-health-track",
+      favicon: "/project-icons/pulse-health-track.svg"
+    },
+    {
       title: "HighlightVids",
       description:
         "YouTube clone with login, uploads, viewing, and a scalable video processing pipeline.",
