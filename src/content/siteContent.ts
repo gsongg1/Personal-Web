@@ -43,7 +43,7 @@ export const siteContent = {
     location: "Vancouver, BC",
     phone: "587-718-8740",
     email: "Georgesong00@gmail.com",
-    tagline: "Computer Science student at UBC building scalable web products.",
+    tagline: "Computer Science student at UBC building thoughtful, user-centered products.",
     highlights: [
       "Full-stack: TypeScript, React/Next.js, Node",
       "Cloud: GCP (Cloud Run, Pub/Sub, Storage), Firebase",
@@ -92,8 +92,8 @@ export const siteContent = {
   } satisfies SocialLinks,
   about: {
     paragraphs: [
-      "I am currently a Computer Science student at the University of British Columbia. I enjoy solving problems in order to build innovative and impactful products. With my background in Biology, I aim to leverage my unique experience into the tech space and contribute in meaningful and innovative ways.",
-      "In my free time, I enjoy playing basketball, watching MMA, and video games!"
+      "I am a Computer Science student at UBC with a background in Biology, so I naturally think about products from both the technical side and the human side. I like taking messy problems, figuring out what users actually need, and turning that into simple, thoughtful experiences that feel good to use.",
+      "I am especially drawn to the PM side of building too: talking to users, shaping direction, and making sure what gets shipped solves the right problem. Outside of school and side projects, I am usually playing basketball, watching MMA, or getting locked into a good game."
     ]
   },
   projects: [
