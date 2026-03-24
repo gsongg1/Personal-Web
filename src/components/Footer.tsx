@@ -2,11 +2,10 @@ import type { SocialLinks } from "@/content/siteContent";
 
 type FooterProps = {
   name: string;
-  builtWithLabel: string;
   social: SocialLinks;
 };
 
-export function Footer({ name, builtWithLabel, social }: FooterProps) {
+export function Footer({ name, social }: FooterProps) {
   const year = new Date().getFullYear();
 
   return (
@@ -15,7 +14,6 @@ export function Footer({ name, builtWithLabel, social }: FooterProps) {
         <p>
           (c) {year} {name}
         </p>
-        <p>{builtWithLabel}</p>
         <div className="footer-socials">
           {social.linkedin ? (
             <a href={social.linkedin} target="_blank" rel="noreferrer" className="text-link">

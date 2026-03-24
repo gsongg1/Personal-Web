@@ -60,7 +60,6 @@ export const siteContent = {
     heroEyebrow: "Portfolio",
     viewProjects: "View Projects",
     emailMe: "Email me",
-    builtWith: "Built with Next.js",
     contactIntro:
       "I am open to internships and new grad opportunities. Reach out and I can share more details about my work."
   },

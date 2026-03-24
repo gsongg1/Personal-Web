@@ -71,7 +71,6 @@ export default function Home() {
       </main>
       <Footer
         name={siteContent.personal.name}
-        builtWithLabel={siteContent.labels.builtWith}
         social={siteContent.social}
       />
     </>
